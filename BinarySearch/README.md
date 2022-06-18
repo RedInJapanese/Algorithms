@@ -8,3 +8,5 @@
 - Index: Current element in the array
 - Left, Right: Other elements in the space of the array when searching for the target
 - Mid: The mid point of the binary tree
+
+
