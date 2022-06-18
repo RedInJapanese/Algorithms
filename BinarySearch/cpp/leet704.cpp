@@ -8,11 +8,15 @@ int main(void) {
 }
 
 int search(int *nums, int numsSize, int target) {
-    int L, R, pivot = 0; 
-    L = 0; 
-    R = numsSize-1; 
+    int pivot, L, R;
+    L = pivot = 0; R = numsSize-1;
+    if(numsSize == 1 && nums[0] == target) {return 0;}
+    if(numsSize == 2 && nums[0] == target) {return 0;}
+    if(numsSize == 2 && nums[1] == target) {return 1;}
+    if(nums[L] == target) {return L;}
+    if(nums[R] == target){return R;}
     while(L<=R) {
-        pivot = L + (R-L)/2; 
+        pivot = L +(R-L)/2;
         if(nums[pivot] == target) {
             return pivot;
         }
@@ -20,7 +24,7 @@ int search(int *nums, int numsSize, int target) {
             R = pivot-1;
         }
         else {
-            L = pivot + 1;
+            L = pivot+1;
         }
     }
     return -1;
