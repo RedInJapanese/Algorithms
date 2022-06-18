@@ -14,7 +14,22 @@ int main(void) {
 }
 
 int search(int* nums, int numsSize, int target) {
-       
+    int pivot, L, R;
+    L = pivot = 0; R = numsSize-1;
+    
+    while(L<=R) {
+        pivot = L +(R-L)/2;
+        if(nums[pivot] == target) {
+            return pivot;
+        }
+        if(target < nums[pivot]) {
+            R = pivot-1;
+        }
+        else {
+            L = pivot+1;
+        }
+    }
+    return -1;
 }
 
 int searchEasy(int *nums, int numsSize, int target) {
