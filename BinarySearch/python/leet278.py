@@ -1,5 +1,5 @@
  def firstBadVersion(n):
-    L = pivot = 0
+    L = pivot = 1
     R = n
     while(L<=R):
         pivot = L + (R-L)//2
