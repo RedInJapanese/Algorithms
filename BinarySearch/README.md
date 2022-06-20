@@ -88,3 +88,12 @@ search(nums[], target) {
     return -1;
 }
 ```
+### The 3 parts of a sucessful binary search
+- Sorting the array if it isn't already sorted
+- Running a binary search after the array is sorted completely
+- Finding the candidates in the remaining space 
+
+### How to recognize binary search problems
+Whenever a problem asks you to search for a specific target or index in an array, you should consider the possibility of binary search. 
+
+
