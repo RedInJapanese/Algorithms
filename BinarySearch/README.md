@@ -96,4 +96,32 @@ search(nums[], target) {
 ### How to recognize binary search problems
 Whenever a problem asks you to search for a specific target or index in an array, you should consider the possibility of binary search. 
 
+## Template #2 
+Note: This template is a modified version of binary search, meaning that you will most likely be using it whenever the problem asks for something that is slightly different than the average binary search problem
 
+Example: If the problem asks you to look for the smallest value in a rotated or unsorted array, or if you're asked to look for the target array in a rotated or unsorted array. 
+
+pseudo code
+```
+search(nums, target) {
+    if(length(nums) == 0){ return -1;}
+
+    int right, left, mid; 
+    left = mid = 0; 
+    right = length(nums)-1; 
+
+    while(left<right) {
+        mid = left + (right-left)/2;
+        if(nums[mid] == target) {
+            return mid;
+        }
+        if(target>nums[mid]) {
+            left = mid-1;
+        }
+        else {
+            right = mid;
+        }
+    }
+    return -1;
+}
+```
