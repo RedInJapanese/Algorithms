@@ -29,4 +29,62 @@ if(target<=nums[pivot]){
     right = pivot-1
 }
 ```
+If we want to prioritize searching the right hand side of the array, then we need to change the conditional to this: 
+```
+if(target>=nums[pivot]){
+    left = pivot+1
+}
+```
+This will take the previously shown example, but search with respect to the right. 
 
+### Code
+We first need to search for the leftmost target, then the rightmost. This can be done using two different binary searches; one being for the left side, the other being for the right. 
+
+```
+leftSearch(nums[], target) {
+    int left, right, pivot 
+    left = 0
+    right = lenght(nums)-1
+    index = -1
+
+
+    while(left<=right){
+        pivot = left + (right-left)/2
+        if(nums[pivot] == target){
+            index = pivot 
+            return
+        }       
+        if(nums[pivot]>=target){
+            right = pivot-1
+        }
+        else {
+            left = pivot+1
+        }
+    }
+}
+```
+
+Function for the right hand search: 
+```
+rightSearch(nums[], target){
+    int left, right, pivot 
+    left = 0
+    right = lenght(nums)-1
+    index = -1
+
+
+    while(left<=right){
+        pivot = left + (right-left)/2
+        if(nums[pivot] == target){
+            index = pivot 
+            return
+        }       
+        if(nums[pivot]<=target){
+            left = pivot+1
+        }
+        else {
+            right = pivot-1
+        }
+    } 
+}
+```
