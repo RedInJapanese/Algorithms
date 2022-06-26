@@ -45,4 +45,4 @@ search(nums) {
     }
 }
 ```
-Note that this is the barebones structure of what either version of the two pointers technique should look like. 
+Note that this is the barebones structure of what either version of the two pointers technique should look like. The version really depends on what the problem is asking for. 
