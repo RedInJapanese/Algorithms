@@ -21,4 +21,35 @@ In order to search for the substring inside of the string, we first need to find
 "h e l l o" 
 "l l"
 
+"h e l l o"
+1st character is not the same as the needle
+
+"h e l l o" 
+2nd character is not the same as the needle
+
+The third character is the same as the start of the needle, so we're going to check the rest of the word by iterating for the length of the needle
+
+"he l l o"
+   "l l"
+Here, there is a perfect match, meaning that the needle is inside the haystack
 ```
+
+While appearing conducive, one area where this algorithm is inefficient is that it relies on the use of looking at every character. In the example, we don't have to look at the 'o', as it is only one character while the needle has a length of 2. In order to do something about this, we need to divide the haystack string into partitions and only look at the ones with a length of 2. This is done with the following line: `length(haystack)+1-length(needle)`. This line will split the string such that the remaining characters that don't fit in with the rest of the array don't get checked. 
+
+### Pseudocode
+```
+strstr(haystack, needle){
+    for(i in length(haystack)+1-length(needle)){
+        for(j in length(needle)){
+            if(haystack[i+j]!=needle[j]){ 
+                break
+            }
+            if(j == length(needle)-1){
+                return i
+            }
+        }
+    }
+    return -1
+}
+```
+the `haystack[i+j]` is done because its more efficient to add i by j every time to search the haystack string for the needle.
