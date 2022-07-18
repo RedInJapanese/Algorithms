@@ -7,7 +7,7 @@ Return the *maximum amount of water a container can store.*
 
 **Notice** that you may not slant the container.
 
-**Example**
+### Example
 ![image](question_11.jpg)
 
 
